@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8" />
+    <link rel="icon" href="https://static.thenounproject.com/png/3063341-200.png" />
+    <link rel="stylesheet" href="stylepage.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <title>Experiments</title>
+</head>
+
+<body>
+    <!-- Navigation links -->
+    <header>
+        <a href="index.html">About Me</a>
+        <a href="contactme.html">Contact Me</a>
+        <a href="experiments.html">HTML Tag Experiments</a>
+    </header>
+    <hr>
+
+    <!-- Show dog script and template -->
+    <div>
+        <h1>HTML Tag Experiments</h1>
+
+        <!-- dog img hidden by template until button clicked -->
+        <button onclick="showImage()">Show dog template</button>
+        <template>
+            <figure>
+                <img alt="dog" id="dog" src="dogresized.jpg" width="200" height="220">
+                <figcaption>Dog</figcaption>
+            </figure>
+        </template>
+
+        <!-- Script to show dog -->
+        <script>
+            function showImage() {
+                if (document.getElementById('dog') == null) {
+                    var temp = document.getElementsByTagName('template')[0];
+                    var clon = temp.content.cloneNode(true);
+                    document.body.appendChild(clon);
+                }
+            }
+        </script>
+        <p>&nbsp;</p>
+    </div>
+
+    <!-- iframe -->
+    <iframe src="index.html" title="About Me" width="800" height="500"></iframe>
+    <p>&nbsp;</p>
+
+    <!-- audio -->
+    <audio controls>
+        <source src="audio.mp3" type="audio/mpeg">
+    </audio>
+    <p>&nbsp;</p>
+
+    <!-- video -->
+    <video controls>
+        <source src="video.mp4" type="video/mp4">
+    </video>
+    <p>&nbsp;</p>
+
+    <!-- image for canvas -->
+    <p>
+        <img alt="icon" id="pic" width="20" height="20" src="https://static.thenounproject.com/png/3063341-200.png">
+    </p>
+
+    <!-- canvas -->
+    <div>
+        <canvas id="testCanvas" width="500" height="200" style="border:1px solid black;"></canvas>
+        <script>
+            function paintCanvas() {
+                var canvas = document.getElementById("testCanvas");
+                var pen = canvas.getContext("2d");
+                var img = document.getElementById("pic");
+                var pat = pen.createPattern(img, "repeat");
+
+                pen.fillStyle = pat;
+                pen.rect(0, 0, 500, 200);
+                pen.fill();
+            }
+        </script>
+        <button onclick="paintCanvas()">Paint Canvas</button>
+    </div>
+
+    <!-- svg -->
+    <svg width="200" height="200">
+        <circle cx="100" cy="100" r="70" stroke="blue" fill="orange" stroke-width="10" />
+        <rect width="40" height="20" stroke="red" fill="blue"></rect>
+    </svg>
+
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8" />
+    <link rel="icon" href="https://static.thenounproject.com/png/3063341-200.png" />
+    <link rel="stylesheet" href="stylepage.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <title>Hoang-Anthony Dinh's Portfolio</title>
+</head>
+
+<body>
+    <!-- Navigation links in header -->
+    <header>
+        <a href="index.html">About Me</a>
+        <a href="contactme.html">Contact Me</a>
+        <a href="experiments.html">HTML Tag Experiments</a>
+    </header>
+
+    <!-- Heading and nav links -->
+    <div id="header">
+        <h1>Hoang-Anthony Dinh's Portfolio</h1>
+        <nav>
+            <a href="#languages">Languages learned</a>
+            <a href="#classes">Classes taken</a>
+            <a href="#links">Contact links</a>
+        </nav>
+    </div>
+
+    <main>
+        <aside>
+            <!-- picture here -->
+            <picture>
+                <source media="(min-width: 1366px)" srcset="dogDesktop.jpg" />
+                <source media="(min-width: 812px)" srcset="dogTablet.jpg" />
+                <img alt="dog" src="dogMobile.jpg" />
+            </picture>
+
+            <!-- Github and contact links -->
+            <div id="links">
+                <h4>Links</h4>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="https://github.com/hod002"><b>Github</b></a>
+                        </li>
+                        <li>
+                            <a href="experiments.html"><b>HTML Tag Experiments</b></a>
+                        </li>
+                        <li>
+                            <a href="contactme.html"><b>Contact Me</b></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Right part of flex box -->
+        <div class="container-content">
+            <!-- About me: brief introduction -->
+            <section id="aboutme">
+                <h2>About me</h2>
+                <p>
+                    I am a Computer Engineering student at University of California, San Diego.
+                    Currently, I am most interested in the Computer Science aspect of Computer
+                    Engineering -- more specifically software engineering, including web devepment,
+                    and machine learning.
+                </p>
+            </section>
+
+            <!-- Programming languages section-->
+            <section id="languages">
+                <h3>Languages I've learned</h3>
+                <ol>
+                    <li><strong>C</strong></li>
+                    <li><strong>C++</strong></li>
+                    <li><strong>ARM Assembly</strong></li>
+                    <li><strong>Java</strong></li>
+                    <li><strong>Python</strong></li>
+                </ol>
+            </section>
+
+            <!-- Classes I've taken -->
+            <section id="classes">
+                <h3>CSE Classes</h3>
+                <ul>
+                    <li><i>Computer Organization and Systems Programming</i></li>
+                    <li><i>Advanced Data Structures</i></li>
+                    <li><i>Design and Analysis of Algorithms</i></li>
+                    <li><i>Components and Design Techniques for Digital Systems</i></li>
+                    <li><i>Web Client Languages (currently)</i></li>
+                    <li><i>Software Engineering (currently)</i></li>
+                </ul>
+            </section>
+            <footer><a href="#">Back to top</a></footer>
+        </div>
+        <hr />
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8" />
+    <link rel="icon" href="https://static.thenounproject.com/png/3063341-200.png" />
+    <link rel="stylesheet" href="stylepage.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <title>Contact Me</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">About Me</a>
+        <a href="contactme.html">Contact Me</a>
+        <a href="experiments.html">HTML Tag Experiments</a>
+    </header>
+    <hr>
+
+    <!-- textarea, button, form, optgroup -->
+    <h1>Contact Me</h1>
+    <form action="sent.html">
+        <fieldset>
+            <legend>Send a message</legend>
+            <label>Select Prefix</label>
+            <select>
+                <optgroup label="Select one">
+                    <option>Mr. </option>
+                    <option>Ms. </option>
+                    <option>Mrs. </option>
+                    <option>Dr. </option>
+                    <option>Sir </option>
+                    <option>Lord </option>
+                    <option>Lady </option>
+                    <option>Master </option>
+                    <option>Governor </option>
+                    <option>Representative. </option>
+                    <option>President </option>
+                    <option>Professor </option>
+                </optgroup>
+            </select>
+            <br /> <br />
+
+            <!-- text area: company, position -->
+            <label>First name: </label>
+            <input type="text">
+            <br /> <br />
+
+            <label>Last name: </label>
+            <input type="text">
+            <br /> <br />
+
+            <label>Position/Title: </label>
+            <input type="text">
+            <br /> <br />
+
+            <label>Email: </label>
+            <input type="text">
+            <br /> <br /><br /> <br />
+
+            <label>Message:</label>
+            <br>
+
+            <textarea rows="11" cols="60"></textarea>
+            <p>&nbsp;</p>
+
+            <label>Email me a copy:</label>
+            <input list="sendcopy">
+            <datalist id="sendcopy">
+                <option value="Yes"></option>
+                <option value="No"></option>
+            </datalist>
+
+            <button type="submit" value="Submit">Submit</button>
+        </fieldset>
+    </form>
+</body>
+
+</html>
