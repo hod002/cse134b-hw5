@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8" />
+    <link rel="icon" href="https://static.thenounproject.com/png/3063341-200.png" />
+    <link rel="stylesheet" href="stylepage.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <title>HW5 Part 1</title>
+    <style>
+        main {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            justify-content: center;
+            align-content: center;
+            position: absolute;
+            height: fit-content;
+        }
+
+        form {
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            position: relative;
+            top: 10vh;
+        }
+
+        button {
+            background-color: rgb(255, 157, 77);
+            color: white;
+            border-radius: 5px;
+            border: 0px;
+            margin: 0 5px;
+            box-shadow: 2px 3px 2px rgb(226, 133, 57);
+            position: relative;
+        }
+
+        button:hover {
+            border: 1px solid white;
+            box-shadow: none;
+        }
+
+        div {
+            position: relative;
+            margin: 20px 0px;
+        }
+
+        label {
+            position: relative;
+            left: 0;
+        }
+
+        #name-label {
+            padding: 3px .5em;
+            position: relative;
+        }
+
+        #body-label {
+            padding: 3px .5em;
+            position: relative;
+        }
+
+        label+input {
+            position: relative;
+            left: 20px;
+            border-radius: 5px;
+            border: 2px solid rgb(189, 245, 245);
+        }
+
+        label+textarea {
+            position: relative;
+            left: 20px;
+            border-radius: 5px;
+            border: 2px solid rgb(189, 245, 245);
+        }
+
+        #button-container {
+            align-self: center;
+            position: relative;
+        }
+
+        #output-container {
+            top: 100px;
+            position: relative;
+            border-radius: 10px;
+            background-color: rgb(189, 245, 245);
+            padding: 5px 10px;
+        }
+
+        h2 {
+            align-self: center;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <form id="crud-form">
+            <div id="name-container">
+                <label for="article_name" id="name-label">Title:</label>
+                <input id="article_name" type="text" required />
+            </div>
+
+            <div id="body-container">
+                <label for="article_body" id="body-label">Body:</label>
+                <textarea id="article_body" rows="25" cols="70" required></textarea>
+            </div>
+
+            <div id="button-container">
+                <button type="submit" id="postBtn">Post</button>
+                <button type="submit" id="getBtn">Get</button>
+                <button type="submit" id="putBtn">Put</button>
+                <button type="submit" id="deleteBtn">Delete</button>
+            </div>
+        </form>
+
+        <div id="output-container">
+            <h2>Output:</h2>
+            <output id="output"></output>
+        </div>
+    </main>
+    <script src="./crud.js"></script>
+</body>
+
+</html>
