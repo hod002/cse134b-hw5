@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8" />
+    <link rel="icon" href="https://static.thenounproject.com/png/3063341-200.png" />
+    <link rel="stylesheet" href="stylepage.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <title>Blog Posts</title>
+    <style>
+        main {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            justify-content: flex-start;
+            height: 80%;
+            width: 60%;
+            align-self: center;
+        }
+
+        #form-dialog {
+            align-self: center;
+            top: 20%;
+            position: absolute;
+            border: 2px solid rgb(189, 245, 245);
+            height: fit-content;
+            padding: 20px 20px 35px;
+            border-radius: 10px;
+        }
+
+        #form-button-container {
+            position: relative;
+            top: 20px;
+            width: fit-content;
+            float: right;
+        }
+
+        #form-body-container {
+            margin-top: 20px;
+            display: flex;
+        }
+
+        #body-label {
+            height: fit-content;
+        }
+
+        hr {
+            width: 100%;
+        }
+
+        #posts-container {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            top: 20%;
+        }
+
+        #posts-container button {
+            width: fit-content;
+        }
+
+        output {
+            position: relative;
+            top: 15px;
+            color: rgb(255, 149, 61);
+            background-color: rgb(189, 245, 245);
+            width: fit-content;
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div id="posts-container">
+            <button type="button" id="new-post-btn">New Post</button>
+            <hr />
+
+            <output id="posts">asdf</output>
+        </div>
+
+        <dialog id="form-dialog">
+            <form id="blog-form">
+                <input id="blog-id" name="author" type="hidden" />
+                <input id="blog-date" name="date" type="hidden" />
+                <div id="title-container">
+                    <label for="title" id="title-label">Title:</label>
+                    <input name="title" id="title" type="text" required />
+                </div>
+
+                <div id="form-body-container">
+                    <label for="body" id="body-label">Body:</label>
+                    <textarea name="body" form="crud-form" id="body" rows="15" cols="50" required></textarea>
+                </div>
+
+                <div id="form-button-container">
+                    <button type="submit" id="save">Save</button>
+                    <button type="button" id="cancel">Cancel</button>
+                </div>
+            </form>
+        </dialog>
+    </main>
+
+    <script src="./blog.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyDGGPJpVpHDo8qNfrFYjTsWlziVPn0tZD4",
+            authDomain: "cse134b-hw5-b32bd.firebaseapp.com",
+            projectId: "cse134b-hw5-b32bd",
+            storageBucket: "cse134b-hw5-b32bd.appspot.com",
+            messagingSenderId: "221751407719",
+            appId: "1:221751407719:web:458e03b48e29b53b4350c2",
+            measurementId: "G-5S7VHEYDHL",
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Authentication with firebase
+        let provider = new firebase.auth.GoogleAuthProvider();
+        let credential;
+        let token;
+        let user;
+        let signedIn = false;
+        firebase
+            .auth()
+            .signInWithPopup(provider)
+            .then((result) => {
+                credential = result.credential;
+                token = credential.accessToken;
+                user = result.user;
+                signedIn = true;
+            })
+            .catch((error) => {
+                console.log(error.code);
+                console.log(error.message);
+                signedIn = false;
+            });
+
+    </script>
+</body>
+
+</html>
